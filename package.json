@@ -1,18 +1,18 @@
 {
-  "name": "avalonDemo",
-  "version": "1.0.0",
-  "description": "aaa",
-  "main": "main.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-  },
-  "devDependencies": {
-    "gulp-webserver": "^0.9.1",
-    "requirejs": "^2.1.22"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "avalon-require-gulp-seed",
+    "version": "1.0.0",
+    "description": "aaa",
+    "main": "main.js",
+    "dependencies": {
+        "gulp": "^3.9.1"
+    },
+    "devDependencies": {
+        "gulp-webserver": "^0.9.1",
+        "requirejs": "^2.1.22"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
 }

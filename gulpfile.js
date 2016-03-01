@@ -3,14 +3,14 @@ var rjs = require('requirejs');
 var webserver = require('gulp-webserver');
 
 gulp.task('server', function() {
-  gulp.src('./')
+  gulp.src('./dest')
     .pipe(webserver({
       port: 8400,
       livereload: false,
       open: false,
       middleware: [function(request, response, next) {
         if (request.url === '/') {
-          request.url = '/d.html';
+          request.url = '/index.html';
         }
         next();
       }]
@@ -83,11 +83,7 @@ gulp.task('build', function(cb) {
         'domReady',
         'app'
       ]
-    }],
-    onBuildWrite: function(moduleName, path, contents) {
-      //去除console.log
-      return contents.replace(/console.log(.*)/g, '');
-    }
+    }]
   }, function(buildResponse) {
     // console.log('build response', buildResponse);
     cb();
