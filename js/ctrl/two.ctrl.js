@@ -1,15 +1,12 @@
 define([],
   function() {
     var viewModel = avalon.define({
-      $id: 'listCtrl',
-      list: "list",
+      $id: 'twoCtrl'
+    
     })
-
     return avalon.controller(function($ctrl) {
-      $ctrl.$onRendered = function() {
-
-      }
-      //params为URL参数
+      $ctrl.$onRendered = function() {}
+    //params为URL参数
       $ctrl.$onEnter = function(params) {
       }
       $ctrl.$onBeforeUnload = function() {

@@ -1,0 +1,11 @@
+<div ms-controller="threeCtrl">
+任务安排
+<input type="search"   placeholder="请输入场馆名称" ms-duplex="searchData.keyword">
+<button ms-click="search">搜索</button>
+<ul>
+            <li ms-repeat="results">{{el.name}} --- {{$index}}</li>
+        </ul>
+</div>
+
+
+

@@ -9,8 +9,15 @@ require.config({
     'mmRouter': 'libs/avalon/mmRouter',
     'mmState': 'libs/avalon/mmState',
     'jquery': 'libs/jquery',
-    'domReady':'libs/domReady',
-    "app": "app"
+    'domReady': 'libs/domReady',
+    "app": "app",
+
+    'modelFactory': 'models/modelFactory',
+
+    'config': 'base/config',
+
+    //ctrl
+    "headerCtrl": "ctrl/header.ctrl"
 
   },
   shim: {
@@ -20,8 +27,8 @@ require.config({
     'jquery': {
       exports: '$'
     },
-        'bootstrap': {
-      deps:['jquery'],
+    'bootstrap': {
+      deps: ['jquery'],
       exports: 'bootstrap'
     },
     mmHistory: {

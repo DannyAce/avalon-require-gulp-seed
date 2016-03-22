@@ -13,7 +13,9 @@ define([],
 
     return avalon.controller(function($ctrl) {
       $ctrl.$onRendered = function() {}
-      $ctrl.$onEnter = function() {}
+      //params为URL参数
+      $ctrl.$onEnter = function(params) {
+      }
       $ctrl.$onBeforeUnload = function() {
 
         }

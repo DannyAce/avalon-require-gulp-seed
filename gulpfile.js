@@ -3,6 +3,20 @@ var rjs = require('requirejs');
 var webserver = require('gulp-webserver');
 
 gulp.task('server', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      port: 8400,
+      livereload: false,
+      open: false,
+      middleware: [function(request, response, next) {
+        if (request.url === '/') {
+          request.url = '/d.html';
+        }
+        next();
+      }]
+    }));
+});
+gulp.task('serverdest', function() {
   gulp.src('./dest')
     .pipe(webserver({
       port: 8400,
@@ -26,6 +40,10 @@ gulp.task('build', function(cb) {
     removeCombined: true,
     preserveLicenseComments: false,
     fileExclusionRegExp: /^Gruntfile.js$|^package.json$|^.idea$|^desttop.ini$|^d.html$|^readme.txt$|^web.config$|^node_modules$|.*\.scss|static|\.git$/,
+    // optimize: "none",
+    // "uglify": {
+    //   "except": ["$vmodels", "$ctrl"]
+    // },
     shim: {
       avalon: {
         exports: 'avalon'
@@ -67,7 +85,11 @@ gulp.task('build', function(cb) {
       'mmState': 'libs/avalon/mmState',
       'jquery': 'libs/jquery',
       'domReady': 'libs/domReady',
-      'app': 'app'
+      "app": "app",
+      'modelFactory': 'models/modelFactory',
+      'config': 'base/config',
+      "headerCtrl": "ctrl/header.ctrl"
+
     },
     modules: [{
       name: 'mini',
@@ -81,7 +103,10 @@ gulp.task('build', function(cb) {
         'mmState',
         'jquery',
         'domReady',
-        'app'
+        'app',
+        'modelFactory',
+        'config',
+        'headerCtrl'
       ]
     }]
   }, function(buildResponse) {
